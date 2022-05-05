@@ -12,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+  
   const [
     signInWithEmailAndPassword,
     user,
@@ -24,6 +25,7 @@ const Login = () => {
       navigate(from,{replace: true});
       
   }
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -91,6 +93,7 @@ const Login = () => {
           Login
         </Button>
       </Form>
+     
       
       <p>
         New to AmaderSchool ? 

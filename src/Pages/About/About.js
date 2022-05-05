@@ -14,7 +14,7 @@ const About = () => {
                 </div>
                 <div className='col-12 col-lg-6'>
                     <h4>My goal: </h4>
-                    <p>I am a student of CSE . My dream is to be a mern stack web developer in 2 years and join a multinational company to gather experiment . I will try to give a company by gaining some experience by working there.</p>
+                    {/* <p>I am a student of CSE . My dream is to be a mern stack web developer in 2 years and join a multinational company to gather experiment . I will try to give a company by gaining some experience by working there.</p> */}
                 </div>
             </div>
         </div>
