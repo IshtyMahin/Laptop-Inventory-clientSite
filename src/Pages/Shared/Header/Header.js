@@ -16,26 +16,26 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg" sticky="top" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/" className="logo">
-            <span style={{color:"red"}}> Amader</span> School
+            <span style={{color:"red"}}> Laptop</span> Inventory
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               
-              <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              {/* <Nav.Link as={Link} to="/blog">Blog</Nav.Link> */}
+              <Nav.Link as={Link} to="/inventory">Inventory</Nav.Link>
+             {
+               user? 
+               <NavDropdown title="Manage Inventory" id="collasible-nav-dropdown">
+               <NavDropdown.Item href="inventory/addProduct">Add product</NavDropdown.Item>
+               <NavDropdown.Item href="/inventory/deleteProduct">
+                 Delete Product
+               </NavDropdown.Item>
+               
+             </NavDropdown>
+               :
+               <h2>Nothing</h2>
+             }
             </Nav>
             <Nav>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
