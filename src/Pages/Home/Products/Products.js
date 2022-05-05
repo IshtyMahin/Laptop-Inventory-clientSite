@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Product from '../Product/Product';
 import './Products.css'
 
@@ -22,7 +23,9 @@ const Products = () => {
                 >
                 </Product>)
             }
+
             </div>
+            <Link to="/manageInventory" className='btn btn-primary mx-auto w-25 my-2'>Manage Inventory</Link>
             </div>
         </div>
     );

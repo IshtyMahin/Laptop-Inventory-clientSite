@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -23,19 +23,9 @@ const Header = () => {
             <Nav className="me-auto">
               
               {/* <Nav.Link as={Link} to="/blog">Blog</Nav.Link> */}
-              <Nav.Link as={Link} to="/inventory">Inventory</Nav.Link>
-             {
-               user? 
-               <NavDropdown title="Manage Inventory" id="collasible-nav-dropdown">
-               <NavDropdown.Item href="inventory/addProduct">Add product</NavDropdown.Item>
-               <NavDropdown.Item href="/inventory/deleteProduct">
-                 Delete Product
-               </NavDropdown.Item>
-               
-             </NavDropdown>
-               :
-               <h2>Nothing</h2>
-             }
+              <Nav.Link as={Link} to="/manageInventory">Manage Inventory</Nav.Link>
+              <Nav.Link as={Link} to="/addProduct">Add product</Nav.Link>
+             
             </Nav>
             <Nav>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
