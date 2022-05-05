@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Product.css'
 
-const Product = ({product}) => {
+const Product = (props) => {
     
-    const {_id,name,img,description,price}= product;
+    const {_id,name,img,description,price}= props.product;
     const navigate = useNavigate();
     const navigateToProductDetail = id => {
         navigate(`/product/${id}`)
@@ -15,7 +15,8 @@ const Product = ({product}) => {
             <h2>{name}</h2>
             <p>Price: {price}</p>
             <p><small>{description}</small></p>
-            <button onClick={() => navigateToProductDetail(_id)} className='btn btn-primary'>manage</button>
+            <button onClick={() => navigateToProductDetail(_id)} className='btn btn-primary'>Update</button>
+            {props.children}
         </div>
     );
 };
