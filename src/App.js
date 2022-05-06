@@ -8,10 +8,10 @@ import About from './Pages/About/About';
 import Header from './Pages/Shared/Header/Header'
 import Login from './Pages/Login/Login/Login'
 import Register from './Pages/Login/Register/Register';
-import CheckOut from './Pages/CheckOut/CheckOut';
+
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
-import Blog from './Pages/Blog/Blog';
+
 import NotFound from './Pages/NotFound/NotFound';
 import Inventory from './Pages/Inventory/Inventory';
 import AddProduct from './Pages/AddProduct/AddProduct';
