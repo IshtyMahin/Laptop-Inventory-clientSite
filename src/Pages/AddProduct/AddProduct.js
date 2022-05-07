@@ -2,7 +2,9 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 
 const AddProduct = () => {
@@ -13,7 +15,7 @@ const AddProduct = () => {
         const url = `http://localhost:5000/product`
         axios.post(url,data)
         .then(res =>{
-            console.log(res)
+            toast('Data add in database')
             
         })
         
@@ -34,44 +36,11 @@ const AddProduct = () => {
       <input className="mb-2" placeholder="Photo URL" type="text" {...register("img")} />
       <input className='my-3 btn btn-dark' type="submit"value="Add Service" />
     </form>
+    <ToastContainer></ToastContainer>
     </div>
+    
     );
 };
 
 export default AddProduct;
 
-// img
-// :
-// "https://i.ibb.co/BPbGCDZ/laptop4.jpg"
-// name
-// :
-// "Lenovo IdeaPad Slim 3i Celeron N4020 256GB SSD 15.6inch HD Laptop with..."
-// price
-// :
-// "35,800৳"
-// supplier
-// :
-// "brother's group"
-// quantity
-// :
-// 6
-
-// img
-// :
-// https://i.ibb.co/H4YWj4S/laptop1.jpg
-// String
-// name
-// :
-//  Lenovo IdeaPad Slim 3i 15IGL Intel Celeron N4020 15.6inch HD Laptop
-// String
-// price
-// :
-// 34,800৳
-// String
-// supplier
-// :
-// Md Shihab
-// String
-// quantity
-// :
-// 17

@@ -65,7 +65,7 @@ const MyItems = () => {
             </Product>
           ))}
         </div>
-        <Link to="/manageInventory" className="btn btn-dark mx-auto w-25 mt-3">
+        <Link to="/manageInventory" className="btn btn-dark mx-auto w-25 my-3">
           Manage Inventory
         </Link>
       </div>
