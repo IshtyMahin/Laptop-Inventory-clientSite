@@ -1,5 +1,5 @@
 # project name : Laptop Inventory
-# live site link :[https://assignment-10-9b8c8.web.app/](https://assignment-10-9b8c8.web.app/)
+# live site link :[https://assignment-11-796ba.web.app/](https://assignment-11-796ba.web.app/)
 
 # project work
 - React routes & route
@@ -9,7 +9,9 @@
 - login and register from
 - About me
 - Add product in data base
-- 
+- query by email
+- quantity add in database by input field
+
 
 # framework & libraries
 
@@ -20,7 +22,9 @@
  5. react-firebase-hooks
  6. react-router-dom 
  7. mongodb
-
+ 8. firebase
+ 9. react-toastify
+ 10.react-router
 
 
 # Getting Started with Create React App
