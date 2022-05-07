@@ -23,7 +23,7 @@ const ProductManage = () => {
     setCount(newQuantity);
     console.log(newQuantity);
 
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://fierce-badlands-00292.herokuapp.com/product/${productId}`;
     console.log(url);
 
     axios
@@ -46,7 +46,7 @@ const ProductManage = () => {
       setCount(newQuantity);
     }
     setCount(newQuantity);
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://fierce-badlands-00292.herokuapp.com/product/${productId}`;
     console.log(url);
 
     axios
@@ -81,16 +81,13 @@ const ProductManage = () => {
           required
         />
         <input
-          className="btn btn-darktext-dangerw-100 m-2"
+          className="btn btn-dark  w-100 m-2"
           type="submit"
           value="update Quantity"
         />
       </form>
       <div className="w-50 mx-auto">
-        <Link
-          to="/manageInventory"
-          className="btn btn-dark w-100 mx-2 my-2"
-        >
+        <Link to="/manageInventory" className="btn btn-dark w-100 mx-2 my-2">
           Manage Inventory
         </Link>
       </div>

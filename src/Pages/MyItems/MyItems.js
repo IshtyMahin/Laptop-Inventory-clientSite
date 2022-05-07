@@ -6,39 +6,27 @@ import auth from "../../firebase.init";
 import Product from "../Home/Product/Product";
 
 const MyItems = () => {
-    const [user] =useAuthState(auth);
-    
+  const [user] = useAuthState(auth);
+
   const [products, setProducts] = useState([]);
-  
- 
+
   useEffect(() => {
-      
-    const getMyItems = async()=>{
-        const email = user?.email;
-        console.log(email)
-        const url = `http://localhost:5000/myItems?email=${email}`
-        const {data}= await axios.get(url);
-        
-        setProducts(data)
-    }
-    getMyItems()
+    const getMyItems = async () => {
+      const email = user?.email;
+      console.log(email);
+      const url = `https://fierce-badlands-00292.herokuapp.com/myItems?email=${email}`;
+      const { data } = await axios.get(url);
+
+      setProducts(data);
+    };
+    getMyItems();
   }, [user]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://fierce-badlands-00292.herokuapp.com/product/${id}`;
       fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          const remaining = products.filter((product) => product._id !== id);
-          setProducts(remaining);
-        });
-      const url2 = `http://localhost:5000/myItems/${id}`;
-      fetch(url2, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -56,7 +44,7 @@ const MyItems = () => {
         <div className="products-container">
           {products.map((product) => (
             <Product key={product._id} product={product}>
-                 <button
+              <button
                 onClick={() => handleDelete(product._id)}
                 className="btn btn-danger "
               >

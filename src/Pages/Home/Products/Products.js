@@ -6,7 +6,7 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://fierce-badlands-00292.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -20,10 +20,7 @@ const Products = () => {
             <Product key={product._id} product={product}></Product>
           ))}
         </div>
-        <Link
-          to="/manageInventory"
-          className="btn btn-dark mx-auto w-25 mt-3"
-        >
+        <Link to="/manageInventory" className="btn btn-dark mx-auto w-25 mt-3">
           Manage Inventory
         </Link>
       </div>

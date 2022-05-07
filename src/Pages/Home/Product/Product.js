@@ -16,11 +16,11 @@ const Product = (props) => {
       <h4>{name}</h4>
 
       <p>
-        <small>{description}</small>
+        <span className="text-danger fs-6">Description</span> : <small>{description}</small>
       </p>
-      <p>Price: {price}</p>
-      <p>Supplier:{supplier} </p>
-      <p>Quantity: {quantity}</p>
+      <p><span className="text-danger fs-6">Price </span> : {price}</p>
+      <p><span className="text-danger fs-6">Supplier </span>:  {supplier} </p>
+      <p><span className="text-danger fs-6">Quantity </span>: {quantity}</p>
 
       <button
         onClick={() => navigateToProductDetail(_id)}
