@@ -1,12 +1,10 @@
 import React from "react";
 
-
 const Contactme = () => {
   return (
     <div className=" bg-secondary  mt-4">
-      
       <div className="container">
-      <h2 className="display-6 mb-2 text-center">Contact Me</h2>
+        <h1 className="display-6 mb-2 text-center">Contact US</h1>
         <div className="d-flex row ">
           <div className="col-4">
             <h3 className="color_sec py-4">Get in touch</h3>
@@ -39,18 +37,19 @@ const Contactme = () => {
               />
               <br />
               <textarea
-              className="w-100 from-control "
-              id="message"
-              name="message"
-              placeholder="Message"
-              rows="5"
-            ></textarea>
-            <button className="btn btn-primary w-50 m-auto mb-2">Send</button>
+                className="w-100 from-control "
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="5"
+              ></textarea>
+              <button className="btn btn-dark w-100 m-auto mb-2">
+                Send
+              </button>
             </form>
           </div>
         </div>
       </div>
-     
     </div>
   );
 };
