@@ -1,0 +1,34 @@
+.home-container{
+    display: flex;
+    
+    margin: 50px 50px;
+}
+.home-title{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home-title h1{
+    color: rgb(244, 97, 97);
+}
+.home-title p {
+    font-size: 20px;
+} 
+@media only screen and (max-width:576px) {
+    .home-container
+        {
+        flex-direction: column-reverse;
+       
+    }
+    .home-title{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .products-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -8,14 +8,18 @@ import About from './Pages/About/About';
 import Header from './Pages/Shared/Header/Header'
 import Login from './Pages/Login/Login/Login'
 import Register from './Pages/Login/Register/Register';
-import CheckOut from './Pages/CheckOut/CheckOut';
+
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
-import Blog from './Pages/Blog/Blog';
+
 import NotFound from './Pages/NotFound/NotFound';
 import Inventory from './Pages/Inventory/Inventory';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import ProductManage from './Pages/ProductManage/ProductManage';
+import Blog from './Pages/Blog/Blog';
+
+import MyItems from './Pages/MyItems/MyItems';
+import { ToastContainer } from 'react-toastify';
 function App() {
   return (
     <div className='app'>
@@ -30,7 +34,8 @@ function App() {
             <Inventory></Inventory>
           </RequireAuth>
         }></Route>
-       
+       <Route path='/blog' element={<Blog></Blog>}></Route>
+       <Route path='/myProduct' element={<MyItems></MyItems>}></Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
             <ProductManage></ProductManage>
@@ -49,6 +54,7 @@ function App() {
       </Routes>
       
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

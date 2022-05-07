@@ -1,47 +1,99 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useProductDetail from "../../hooks/useProductDetails";
 
 const ProductManage = () => {
   const { productId } = useParams();
   const [product] = useProductDetail(productId);
-  
-  const { _id, name, img, description, price, stock } = product;
-
-  const [quantity,setQuantity] = useState([]);
-  
- 
-
-  const deliveredUpdate = (event) => {
+  console.log(product);
+  const { name, img, quantity } = product;
+  console.log(name);
+  const [count, setCount] = useState(-1);
+  const quantityUpdateHandler = (event) => {
     event.preventDefault();
-    
-    const newAdd = event.target.stock.value;
-    console.log(newAdd);
-    const newQuantity = parseInt(stock + newAdd);
-    stock = newQuantity;
+    // const oldStock = (product.stock);
+    // console.log(oldStock)
+    const newstock = parseInt(event.target.stock.value);
+    console.log(quantity);
+    let newQuantity;
+    count < 0
+      ? (newQuantity = newstock + parseInt(quantity))
+      : (newQuantity = newstock + count);
+    setCount(newQuantity);
+    console.log(newQuantity);
 
+    const url = `http://localhost:5000/product/${productId}`;
+    console.log(url);
+
+    axios
+      .put(url, { quantity: newQuantity })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+    event.target.reset();
   };
 
-  const deleteOne = ()=>{
-      const olderQuantity = stock 
-      console.log(quantity);
-  }
+  const deliverHandle = () => {
+    let newQuantity;
+
+    if (count < 0) {
+      newQuantity = quantity - 1;
+      setCount(newQuantity);
+    } else {
+      newQuantity = count - 1;
+      setCount(newQuantity);
+    }
+    setCount(newQuantity);
+    const url = `http://localhost:5000/product/${productId}`;
+    console.log(url);
+
+    axios
+      .put(url, { quantity: newQuantity })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <div className="product">
         <img className="w-100" src={img} alt="" />
         <h2>{name}</h2>
-        <p>Price: {price}</p>
-        <p>
-          <small>{description}</small>
-        </p>
-        <p>quantity: {stock}</p>
-        <button onClick={deleteOne} className="btn btn-primary">Delivered</button>
+
+        <p>Quantity: {count < 0 ? quantity : count}</p>
+        {count === 0 ? (
+          <p className="btn btn-danger">SoldOut</p>
+        ) : (
+          <button onClick={deliverHandle} className="btn btn-secondary">
+            Delivered
+          </button>
+        )}
       </div>
-      <form className="w-50 mx-auto "  onSubmit={deliveredUpdate}>
-        <input  className="w-100 m-2" type="number" name="stock" placeholder="stock" />
-        <input className='btn btn-primary w-100 m-2' type="submit" value="update Quantity" />
+      <form onSubmit={quantityUpdateHandler} className="w-50 mx-auto ">
+        <input
+          className="w-100 m-2"
+          type="number"
+          name="stock"
+          placeholder="stock"
+          required
+        />
+        <input
+          className="btn btn-darktext-dangerw-100 m-2"
+          type="submit"
+          value="update Quantity"
+        />
       </form>
+      <div className="w-50 mx-auto">
+        <Link
+          to="/manageInventory"
+          className="btn btn-dark w-100 mx-2 my-2"
+        >
+          Manage Inventory
+        </Link>
+      </div>
     </div>
   );
 };

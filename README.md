@@ -1,4 +1,4 @@
-# project name : AmaderSchool
+# project name : Laptop Inventory
 # live site link :[https://assignment-10-9b8c8.web.app/](https://assignment-10-9b8c8.web.app/)
 
 # project work
@@ -8,15 +8,18 @@
 - google Login
 - login and register from
 - About me
-- service of my work
+- Add product in data base
+- 
 
 # framework & libraries
+
  1. bootstrap
  2. react
  3. react-bootstrap
  4. react-dom
  5. react-firebase-hooks
  6. react-router-dom 
+ 7. mongodb
 
 
 
