@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Banner from '../Banner/Banner';
 import Contactme from '../Contactme/Contactme';
 import HomeHeader from '../HomeHeader/HomeHeader';
@@ -19,6 +20,7 @@ const Home = () => {
             <Banner></Banner>
             <Products></Products>
             <Contactme></Contactme>
+            
         </>
 
         </div>

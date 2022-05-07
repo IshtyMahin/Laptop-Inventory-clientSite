@@ -81,7 +81,7 @@ const ProductManage = () => {
           required
         />
         <input
-          className="btn btn-darktext-dangerw-100 m-2"
+          className="btn btn-dark  w-100 m-2"
           type="submit"
           value="update Quantity"
         />
